@@ -40,10 +40,9 @@ jobs:
         run: |
           SB_LOCAL_PATH=$(pwd)
           echo $SB_LOCAL_PATH
-          sudo ln -s $(pwd)/snazzy-boi $(pwd)/qmk_firmware/keyboards/crkbd/keymaps/snazzy-boi
+          sudo ln -s $(pwd)/snazzy $(pwd)/qmk_firmware/keyboards/crkbd/keymaps/snazzy-boi
       - name: Build .hex file
         run: sudo $HOME/.local/bin/qmk compile -kb crkbd/rev1/common -km snazzy-boi   
-
       - uses: actions/upload-artifact@v2
         with:
           name: corne-snazzy-boi-default.hex

@@ -34,8 +34,6 @@ jobs:
         run: echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc       
       - name: chmod 
         run: sudo chmod +x $HOME/.local/bin/qmk
-      - name: setup qmk
-        run: sudo $HOME/.local/bin/qmk setup -y
       - name: Link custom keymap definition
         run: ln -s $(pwd)/snazzy-boi $(pwd)/qmk_firmware/keyboards/crkbd/keymaps/snazzy-boi
       - name: setup 

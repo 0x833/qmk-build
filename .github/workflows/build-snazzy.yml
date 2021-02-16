@@ -30,10 +30,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: install qmk cli
         run: sudo python3 -m pip install --user qmk        
-      - name: Update path to include local bin, ubuntu has a bug 
-        run:       
       - name: chmod 
-        run: sudo chmod +x $HOME/.local/bin/qmk; sudo which qmk
+        run: sudo chmod +x $HOME/.local/bin/qmk
       - name: Setup QMK CLI
         run: sudo $HOME/.local/bin/qmk setup -y
       - name: Link custom keymap definition

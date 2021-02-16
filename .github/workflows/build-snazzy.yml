@@ -44,7 +44,7 @@ jobs:
         run: |
           sudo $HOME/.local/bin/qmk config user.keyboard=crkbd/rev1/common
           sudo $HOME/.local/bin/qmk config user.keymap=snazzy
-          sudo $HOME/.local/bin/qmk compile
+          sudo $HOME/.local/bin/qmk compile -c configurator/corne-snazzy-boi-v002.json
       - uses: actions/upload-artifact@v2
         with:
           name: corne-snazzy-boi-default.hex

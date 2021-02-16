@@ -33,7 +33,7 @@ jobs:
       - name: chmod 
         run: chmod +x $HOME/.local/bin/qmk
       - name: Setup QMK CLI
-        run: $HOME/.local/bin/qmk setup -y
+        run: $HOME/.local/bin/qmk setup -H $(pwd) -y
       - name: Link custom keymap definition
         run: |
           SB_LOCAL_PATH=$(pwd)

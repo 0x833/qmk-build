@@ -31,7 +31,7 @@ jobs:
       - name: install qmk cli
         run: sudo python3 -m pip install --user qmk        
       - name: Update path to include local bin, ubuntu has a bug 
-        run: sudo echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc       
+        run:       
       - name: chmod 
         run: sudo chmod +x $HOME/.local/bin/qmk; sudo which qmk
       - name: Setup QMK CLI
@@ -40,7 +40,7 @@ jobs:
         run: |
           SB_LOCAL_PATH=$(pwd)
           echo $SB_LOCAL_PATH
-          sudo ln -s $(pwd)/snazzy $(pwd)/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/snazzy-boi
+          sudo ln -s $(pwd)/snazzy $(pwd)/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/snazzy
 
       - name: Configure your Build Environment and build
         run: |

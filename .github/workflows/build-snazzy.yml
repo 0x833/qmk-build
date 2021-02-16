@@ -37,12 +37,13 @@ jobs:
       - name: Setup QMK CLI
         run: sudo $HOME/.local/bin/qmk setup -y
       - name: Link custom keymap definition
-        run:|
+        run: |
           SB_LOCAL_PATH=$(pwd)
           echo $SB_LOCAL_PATH
           sudo ln -s $(pwd)/snazzy $(pwd)/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/snazzy-boi
-      - name: Configure your Build Environment and build 
-        run:|
+
+      - name: Configure your Build Environment and build
+        run: |
           sudo $HOME/.local/bin/qmk config user.keyboard=crkbd/rev1/common
           sudo $HOME/.local/bin/qmk config user.keymap=snazzy
           sudo $HOME/.local/bin/qmk compile

@@ -33,7 +33,7 @@ jobs:
       - name: Update path to include local bin, ubuntu has a bug 
         run: sudo echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc       
       - name: chmod 
-        run: sudo chmod +x $HOME/.local/bin/qmk; which qmk
+        run: sudo chmod +x $HOME/.local/bin/qmk; sudo which qmk
       - name: Setup QMK CLI
         run: sudo $HOME/.local/bin/qmk setup -y
       - name: Link custom keymap definition
